@@ -3,8 +3,12 @@
 <beans default-autowire="constructor">
     <bean id="tfsIssueProviderFactory" class="com.dpiessens.TfsIssueProviderFactory">
         <constructor-arg index="0" ref="tfsIssueFetcher"/>
+        <constructor-arg index="1" ref="tfsDataProvider" />
+        <constructor-arg index="2" ref="vcsManager" />
     </bean>
     <bean id="tfsIssueFetcher" class="com.dpiessens.TfsIssueFetcher">
         <constructor-arg index="0" ref="ehCacheUtil"/>
+        <constructor-arg index="1" ref="tfsDataProvider" />
     </bean>
+    <bean id="tfsDataProvider" class="com.dpiessens.TfsJavaDataProvider" />
 </beans>

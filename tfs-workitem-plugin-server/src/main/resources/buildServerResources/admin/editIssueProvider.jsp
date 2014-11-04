@@ -37,5 +37,12 @@
         <span id="error_secure:password" class="error"></span>
       </td>
     </tr>
+    <tr>
+      <th><label for="useVcsCredentials">Use source control credentials</label></th>
+      <td>
+        <props:checkboxProperty name="useVcsCredentials"/>
+        <span id="error_useVcsCredentials" class="error"></span>
+      </td>
+    <tr>
   </table>
 </div>
