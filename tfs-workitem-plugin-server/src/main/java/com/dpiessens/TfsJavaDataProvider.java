@@ -13,12 +13,14 @@ import com.microsoft.tfs.core.util.CredentialsUtils;
 import com.microsoft.tfs.core.util.TSWAHyperlinkBuilder;
 import com.microsoft.tfs.core.util.URIUtils;
 import jetbrains.buildServer.issueTracker.IssueData;
+import jetbrains.buildServer.web.openapi.PluginDescriptor;
 import org.apache.commons.httpclient.Credentials;
 import org.apache.commons.httpclient.UsernamePasswordCredentials;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jfree.util.Log;
 
+import java.io.File;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -31,7 +33,13 @@ import java.util.Map;
  */
 public class TfsJavaDataProvider implements TfsDataProvider {
 
-    private static Logger LOG = Logger.getInstance(TfsJavaDataProvider.class.getName());
+    private static final Logger LOG = Logger.getInstance(TfsJavaDataProvider.class.getName());
+
+    private static volatile boolean runtimeSet = false;
+
+    public TfsJavaDataProvider(PluginDescriptor pluginDescriptor) {
+        validateRuntimeConfiguration(pluginDescriptor);
+    }
 
     /**
      * Gets all issues related to a specific source control revision.
@@ -214,4 +222,32 @@ public class TfsJavaDataProvider implements TfsDataProvider {
                 hyperlinkBuilder.getWorkItemEditorURL(workItem.getID()).toString());
     }
 
+    /**
+     * Validates the runtime configuration to ensure that the native TFS binaries have been loaded
+     * @param pluginDescriptor The plugin information needed to set the path.
+     */
+    private static synchronized void validateRuntimeConfiguration(@NotNull PluginDescriptor pluginDescriptor) {
+        if (runtimeSet) {
+            LOG.debug("TFS binaries have already been loaded, skipping load");
+            return;
+        }
+
+        runtimeSet = true;
+
+        File pluginRoot = pluginDescriptor.getPluginRoot();
+        if (!pluginRoot.exists()) {
+            LOG.error(String.format("Plugin root could not be found or does not exist!"));
+            return;
+        }
+
+        // Locate the file
+        File libDir = new File(pluginRoot, "server/lib/tfs");
+        if (libDir.exists()){
+            LOG.debug("Setting native TFS library path: " + libDir.toString());
+            System.setProperty("com.microsoft.tfs.jni.native.base-directory", libDir.getAbsolutePath());
+        }
+        else {
+            LOG.warn("Cannot locate native TFS library path: " + libDir);
+        }
+    }
 }

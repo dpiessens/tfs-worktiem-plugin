@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b284c55-8e4a-4eb2-ab81-22dcc74f6714" name="Default" comment="Updated to get issue caching working and uniform">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsDataProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsJavaDataProvider.java" />
+    <list default="true" id="7b284c55-8e4a-4eb2-ab81-22dcc74f6714" name="Default" comment="Changed TFS native dependencies from a fixed location to be packed with the plugin and set on startup.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/aix/ppc/libnative_auth.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/macosx/libnative_auth.jnilib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/hpux/PA_RISC/libnative_auth.sl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/freebsd/x86/libnative_auth.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/freebsd/x86_64/libnative_auth.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/hpux/ia64_32/libnative_auth.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/arm/libnative_auth.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/ppc/libnative_auth.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/x86/libnative_auth.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/x86_64/libnative_auth.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/sparc/libnative_auth.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/x86/libnative_auth.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/x86_64/libnative_auth.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/aix/ppc/libnative_console.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/macosx/libnative_console.jnilib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/hpux/PA_RISC/libnative_console.sl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/freebsd/x86/libnative_console.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/freebsd/x86_64/libnative_console.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/hpux/ia64_32/libnative_console.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/arm/libnative_console.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/ppc/libnative_console.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/x86/libnative_console.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/x86_64/libnative_console.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/sparc/libnative_console.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/x86/libnative_console.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/x86_64/libnative_console.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/aix/ppc/libnative_filesystem.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/macosx/libnative_filesystem.jnilib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/hpux/PA_RISC/libnative_filesystem.sl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/freebsd/x86/libnative_filesystem.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/freebsd/x86_64/libnative_filesystem.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/hpux/ia64_32/libnative_filesystem.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/arm/libnative_filesystem.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/ppc/libnative_filesystem.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/x86/libnative_filesystem.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/x86_64/libnative_filesystem.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/sparc/libnative_filesystem.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/x86/libnative_filesystem.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/x86_64/libnative_filesystem.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/macosx/libnative_keychain.jnilib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/aix/ppc/libnative_misc.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/macosx/libnative_misc.jnilib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/hpux/PA_RISC/libnative_misc.sl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/freebsd/x86/libnative_misc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/freebsd/x86_64/libnative_misc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/hpux/ia64_32/libnative_misc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/arm/libnative_misc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/ppc/libnative_misc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/x86/libnative_misc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/x86_64/libnative_misc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/sparc/libnative_misc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/x86/libnative_misc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/x86_64/libnative_misc.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/aix/ppc/libnative_synchronization.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/macosx/libnative_synchronization.jnilib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/hpux/PA_RISC/libnative_synchronization.sl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/freebsd/x86/libnative_synchronization.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/freebsd/x86_64/libnative_synchronization.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/hpux/ia64_32/libnative_synchronization.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/arm/libnative_synchronization.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/ppc/libnative_synchronization.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/x86/libnative_synchronization.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/linux/x86_64/libnative_synchronization.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/sparc/libnative_synchronization.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/x86/libnative_synchronization.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/solaris/x86_64/libnative_synchronization.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86/native_auth.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86_64/native_auth.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86/native_console.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86_64/native_console.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86/native_credential.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86_64/native_credential.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86/native_filesystem.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86_64/native_filesystem.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86/native_messagewindow.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86_64/native_messagewindow.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86/native_misc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86_64/native_misc.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86/native_registry.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86_64/native_registry.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86/native_synchronization.dll" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/native/win32/x86_64/native_synchronization.dll" />
+      <change type="DELETED" beforePath="C:\Projects\GitHub\tfs-workitem-plugin\local-repo\com\microsoft\tfs\com.microsoft.tfs.sdk\11.0.0\com.microsoft.tfs.sdk-11.0.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Projects\GitHub\tfs-workitem-plugin\local-repo\com\microsoft\tfs\com.microsoft.tfs.sdk\11.0.0\com.microsoft.tfs.sdk-11.0.0.pom" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueFetcher.java" afterPath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueFetcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueProvider.java" afterPath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueProviderFactory.java" afterPath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueProviderFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/META-INF/build-server-plugin-tfs-workitem-plugin.xml" afterPath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/META-INF/build-server-plugin-tfs-workitem-plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/buildServerResources/admin/editIssueProvider.jsp" afterPath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/buildServerResources/admin/editIssueProvider.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsJavaDataProvider.java" afterPath="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsJavaDataProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local-repo/com/microsoft/tfs/com.microsoft.tfs.sdk/maven-metadata-local.xml" afterPath="$PROJECT_DIR$/local-repo/com/microsoft/tfs/com.microsoft.tfs.sdk/maven-metadata-local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/plugin-assembly.xml" afterPath="$PROJECT_DIR$/build/plugin-assembly.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tfs-workitem-plugin.iws" />
@@ -75,27 +156,17 @@
       <file leaf-file-name="TfsIssueFetcher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueFetcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1904" max-vertical-offset="2091">
-              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tfs-workitem-plugin.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TfsIssueProviderFactory.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TfsIssueProviderFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueProviderFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43669724" vertical-offset="0" max-vertical-offset="545">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
               <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
               <folding />
             </state>
@@ -105,7 +176,7 @@
       <file leaf-file-name="TfsIssueProvider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1309" max-vertical-offset="1768">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513">
               <caret line="77" column="9" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
               <folding />
             </state>
@@ -115,18 +186,72 @@
       <file leaf-file-name="editIssueProvider.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/buildServerResources/admin/editIssueProvider.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="35" max-vertical-offset="918">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
               <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TfsJavaDataProvider.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TfsJavaDataProvider.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsJavaDataProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1513" max-vertical-offset="3791">
-              <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.019138755" vertical-offset="404" max-vertical-offset="1241">
+              <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+              <folding>
+                <element signature="e#1667#1668#0" expanded="true" />
+                <element signature="e#1729#1730#0" expanded="true" />
+                <element signature="docComment;method#getIssuesForVersion#0;class#TfsJavaDataProvider#0" expanded="false" />
+                <element signature="method#getIssuesForVersion#0;class#TfsJavaDataProvider#0" expanded="false" />
+                <element signature="docComment;method#getIssueById#0;class#TfsJavaDataProvider#0" expanded="false" />
+                <element signature="method#getIssueById#0;class#TfsJavaDataProvider#0" expanded="false" />
+                <element signature="docComment;method#getProjectCollection#0;class#TfsJavaDataProvider#0" expanded="false" />
+                <element signature="method#getProjectCollection#0;class#TfsJavaDataProvider#0" expanded="false" />
+                <element signature="docComment;method#getIssueById#1;class#TfsJavaDataProvider#0" expanded="false" />
+                <element signature="method#getIssueById#1;class#TfsJavaDataProvider#0" expanded="false" />
+                <element signature="docComment;method#convertWorkItemToIssueData#0;class#TfsJavaDataProvider#0" expanded="false" />
+                <element signature="method#convertWorkItemToIssueData#0;class#TfsJavaDataProvider#0" expanded="false" />
+                <element signature="docComment;method#validateRuntimeConfiguration#0;class#TfsJavaDataProvider#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build-server-plugin-tfs-workitem-plugin.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/META-INF/build-server-plugin-tfs-workitem-plugin.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teamcity-plugin.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/teamcity-plugin.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+              <caret line="3" column="23" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugin-assembly.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/plugin-assembly.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+              <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275">
+              <caret line="56" column="42" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -155,15 +280,17 @@
         <option value="$PROJECT_DIR$/build/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/teamcity-plugin.xml" />
-        <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/pom.xml" />
         <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/buildServerResources/popup.jsp" />
         <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsDataProvider.java" />
         <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueProvider.java" />
         <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/META-INF/build-server-plugin-tfs-workitem-plugin.xml" />
-        <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsJavaDataProvider.java" />
-        <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueFetcher.java" />
         <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/buildServerResources/admin/editIssueProvider.jsp" />
         <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueProviderFactory.java" />
+        <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueFetcher.java" />
+        <option value="$PROJECT_DIR$/local-repo/com/microsoft/tfs/com.microsoft.tfs.sdk/maven-metadata-local.xml" />
+        <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/pom.xml" />
+        <option value="$PROJECT_DIR$/build/plugin-assembly.xml" />
+        <option value="$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsJavaDataProvider.java" />
       </list>
     </option>
   </component>
@@ -340,58 +467,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dpiessens" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tfs-workitem-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tfs-workitem-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="local-repo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="microsoft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tfs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.microsoft.tfs.sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tfs-workitem-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tfs-workitem-plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -580,6 +655,11 @@
       <created>1412214297505</created>
       <updated>1412214297505</updated>
     </task>
+    <task id="LOCAL-00001" summary="Updated to get issue caching working and uniform">
+      <created>1415114674068</created>
+      <updated>1415114674068</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -587,7 +667,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7072072" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -595,15 +675,15 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32845894" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995495" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277027" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13641976" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2755214" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20432098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27364865" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297062" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -623,11 +703,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Updated to get issue caching working and uniform" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated to get issue caching working and uniform" />
+    <MESSAGE value="Changed TFS native dependencies from a fixed location to be packed with the plugin and set on startup." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed TFS native dependencies from a fixed location to be packed with the plugin and set on startup." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -639,14 +721,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsJavaDataProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1513" max-vertical-offset="3791">
-          <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsDataProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="425">
@@ -659,7 +733,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="1785">
           <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1729#1730#0" expanded="true" />
+            <element signature="docComment;method#getIssuesForVersion#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="method#getIssuesForVersion#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="docComment;method#getIssueById#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="method#getIssueById#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="docComment;method#getProjectCollection#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="method#getProjectCollection#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="docComment;method#getIssueById#1;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="method#getIssueById#1;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="docComment;method#convertWorkItemToIssueData#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="method#convertWorkItemToIssueData#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="docComment;method#validateRuntimeConfiguration#0;class#TfsJavaDataProvider#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -926,50 +1014,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/plugin-assembly.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24861878" vertical-offset="222" max-vertical-offset="765">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58563536" vertical-offset="634" max-vertical-offset="1275">
-          <caret line="56" column="42" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7214022" vertical-offset="306" max-vertical-offset="918">
-          <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teamcity-plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -996,26 +1044,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/META-INF/build-server-plugin-tfs-workitem-plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37585035" vertical-offset="0" max-vertical-offset="588">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsJavaDataProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1225" max-vertical-offset="3655">
-          <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueFetcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="861" max-vertical-offset="1496">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1853">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueProviderFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1028,6 +1068,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/local-repo/com/microsoft/tfs/com.microsoft.tfs.sdk/maven-metadata-local.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34401348" vertical-offset="0" max-vertical-offset="593">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43965518" vertical-offset="102" max-vertical-offset="765">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76551723" vertical-offset="338" max-vertical-offset="918">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="583" max-vertical-offset="1275">
+          <caret line="56" column="42" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/buildServerResources/admin/editIssueProvider.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="35" max-vertical-offset="918">
@@ -1036,11 +1108,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsIssueProviderFactory.java">
+    <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/resources/META-INF/build-server-plugin-tfs-workitem-plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43669724" vertical-offset="0" max-vertical-offset="545">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teamcity-plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/plugin-assembly.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tfs-workitem-plugin-server/src/main/java/com/dpiessens/TfsJavaDataProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.019138755" vertical-offset="404" max-vertical-offset="1241">
+          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+          <folding>
+            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1729#1730#0" expanded="true" />
+            <element signature="docComment;method#getIssuesForVersion#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="method#getIssuesForVersion#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="docComment;method#getIssueById#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="method#getIssueById#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="docComment;method#getProjectCollection#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="method#getProjectCollection#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="docComment;method#getIssueById#1;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="method#getIssueById#1;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="docComment;method#convertWorkItemToIssueData#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="method#convertWorkItemToIssueData#0;class#TfsJavaDataProvider#0" expanded="false" />
+            <element signature="docComment;method#validateRuntimeConfiguration#0;class#TfsJavaDataProvider#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

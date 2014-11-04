@@ -11,10 +11,6 @@ import org.jfree.util.Log;
 
 public class TfsIssueFetcher extends AbstractIssueFetcher {
 
-    static {
-        System.setProperty("com.microsoft.tfs.jni.native.base-directory", "C:\\Projects\\SDKs\\TFS-SDK\\TFS-SDK-12.0.2\\redist\\native");
-    }
-
     private static final Logger LOG = Logger.getInstance(TfsIssueFetcher.class.getName());
 
     @NotNull

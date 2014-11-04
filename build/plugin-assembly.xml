@@ -9,8 +9,14 @@
      <file>
          <source>target/teamcity-plugin.xml</source>
          <outputDirectory>/</outputDirectory>
-     </file> 
+     </file>
   </files>
+  <fileSets>
+    <fileSet>
+        <directory>../lib/native</directory>
+        <outputDirectory>server/lib/tfs</outputDirectory>
+    </fileSet>
+  </fileSets>
   <moduleSets>
     <moduleSet>
        <useAllReactorProjects>true</useAllReactorProjects>
