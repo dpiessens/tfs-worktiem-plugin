@@ -9,6 +9,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jfree.util.Log;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 public class TfsIssueFetcher extends AbstractIssueFetcher {
 
     private static final Logger LOG = Logger.getInstance(TfsIssueFetcher.class.getName());
@@ -43,6 +47,50 @@ public class TfsIssueFetcher extends AbstractIssueFetcher {
             @NotNull
             public IssueData fetch() throws Exception {
                 return getTfsIssue(myId, host, myCredentials);
+            }
+        });
+    }
+
+    /**
+     * Gets the issues in a batch based on the IDs passed in.
+     * @param host The TFS collection URL
+     * @param ids The issue ID collection
+     * @param credentials The credentials needed to connect to TFS.
+     * @return A collection of matching issues.
+     */
+    @Nullable
+    @Override
+    public Collection<IssueData> getIssuesInBatch(@NotNull String host, @NotNull Collection<String> ids, @Nullable Credentials credentials) {
+
+        final TfsDataProvider myTfsDataProvider = this.tfsDataProvider;
+        final String myHost = host;
+        final Credentials myCredentials = credentials;
+
+        LOG.debug(String.format("Fetching issues in batch: %s", ids));
+
+        return defaultGetIssuesInBatch(host, ids, new BatchFetchFunction() {
+            @NotNull
+            public List<IssueData> batchFetch(@NotNull Collection<String> ids) {
+
+                Collection<Integer> idValues = new ArrayList<Integer>();
+                List<IssueData> issues = new ArrayList<IssueData>();
+
+                for (String idString: ids) {
+                    try {
+                        idValues.add(parseIssueId(idString));
+                    }
+                    catch (NumberFormatException e) {
+                        // Drop exception, it has already been logged
+                    }
+                }
+
+                try {
+                    issues.addAll(myTfsDataProvider.getIssues(idValues, myHost, myCredentials));
+                }
+                catch (Exception e) {
+                    LOG.error("Cannot get issues in batch! Details: " + e);
+                }
+                return issues;
             }
         });
     }
@@ -87,14 +135,7 @@ public class TfsIssueFetcher extends AbstractIssueFetcher {
 
         try {
 
-            int issueNumber;
-            try {
-                issueNumber = Integer.parseInt(issueId);
-            }
-            catch (NumberFormatException e) {
-                LOG.debug(String.format("Could not parse issue '%s' as a number", issueId));
-                throw e;
-            }
+            int issueNumber = parseIssueId(issueId);
 
             IssueData issueData = this.tfsDataProvider.getIssueById(issueNumber, host, credentials);
             if (issueData == null) {
@@ -108,6 +149,25 @@ public class TfsIssueFetcher extends AbstractIssueFetcher {
             LOG.error(ex);
 
             throw ex;
+        }
+    }
+
+    /**
+     * Parses the issue string to convert it to an issue number
+     * @param issueId The issue ID as a string
+     * @return The processed issue number
+     * @throws NumberFormatException Thrown if the issue ID is not numeric
+     */
+    @NotNull
+    private static Integer parseIssueId(@NotNull String issueId)
+            throws NumberFormatException {
+
+        try {
+            return Integer.parseInt(issueId);
+        }
+        catch (NumberFormatException e) {
+            LOG.debug(String.format("Could not parse issue '%s' as a number", issueId));
+            throw e;
         }
     }
 }

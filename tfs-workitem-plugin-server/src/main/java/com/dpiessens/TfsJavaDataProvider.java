@@ -69,11 +69,12 @@ public class TfsJavaDataProvider implements TfsDataProvider {
             if (changeset != null) {
                 final WorkItem[] workItems = changeset.getWorkItems(workItemClient);
                 if (workItems != null && workItems.length > 0) {
-                    LOG.debug(String.format("Changeset %d was not linked to %d work items", revision, workItems.length));
+                    LOG.debug(String.format("Changeset %d was linked to %d work items", revision, workItems.length));
 
                     TSWAHyperlinkBuilder linkingClient = new TSWAHyperlinkBuilder(collection);
 
                     for (WorkItem workItem : workItems) {
+                        LOG.debug(String.format("Adding work item: %d", workItem.getID()));
                         issues.add(convertWorkItemToIssueData(workItem, linkingClient));
                     }
                 } else {
@@ -102,6 +103,46 @@ public class TfsJavaDataProvider implements TfsDataProvider {
 
     /**
      * Gets the data related to a specific work item.
+     * @param ids The ID collection of the issue to get.
+     * @param host The TFS host URL
+     * @param credentials The credentials needed to access TFS.
+     * @throws com.microsoft.tfs.core.httpclient.auth.InvalidCredentialsException Thrown if we cannot connect to the server.
+     * @return The work item data of the items that could be located.
+     */
+    @NotNull
+    public Collection<IssueData> getIssues(@NotNull Collection<Integer> ids, @NotNull String host, @Nullable Credentials credentials)
+            throws InvalidCredentialsException {
+
+        TFSTeamProjectCollection collection = null;
+        WorkItemClient client = null;
+
+        try {
+            collection = getProjectCollection(host, credentials);
+            client = collection.getWorkItemClient();
+
+            Collection<IssueData> issues = new ArrayList<IssueData>();
+            for (Integer id: ids) {
+
+                Log.debug(String.format("Getting work item %d from TFS in batch", id));
+                issues.add(getIssueById(id, collection, client));
+            }
+
+            return issues;
+        }
+        finally {
+
+            if (client != null) {
+                client.close();
+            }
+
+            if (collection != null) {
+                collection.close();
+            }
+        }
+    }
+
+    /**
+     * Gets the data related to a specific work item.
      * @param id The ID of the issue to get.
      * @param host The TFS host URL
      * @param credentials The credentials needed to access TFS.
@@ -113,15 +154,21 @@ public class TfsJavaDataProvider implements TfsDataProvider {
             throws InvalidCredentialsException {
 
         TFSTeamProjectCollection collection = null;
+        WorkItemClient client = null;
 
         try {
             collection = getProjectCollection(host, credentials);
+            client = collection.getWorkItemClient();
 
             Log.debug(String.format("Getting work item %d from TFS", id));
 
-            return getIssueById(id, collection);
+            return getIssueById(id, collection, client);
         }
         finally {
+
+            if (client != null) {
+                client.close();
+            }
 
             if (collection != null) {
                 collection.close();
@@ -165,26 +212,17 @@ public class TfsJavaDataProvider implements TfsDataProvider {
      * Gets an issue from the work item manager by ID.
      * @param id The work item ID.
      * @param collection The team project collection.
+     * @param client The work item client
      * @return The issue data if located; otherwise null
      */
     @Nullable
-    private static IssueData getIssueById(int id, @NotNull TFSTeamProjectCollection collection) {
+    private static IssueData getIssueById(int id, @NotNull TFSTeamProjectCollection collection, @NotNull WorkItemClient client) {
 
-        WorkItemClient client = null;
+        WorkItem workItem = client.getWorkItemByID(id);
 
-        try {
-            client = collection.getWorkItemClient();
-            WorkItem workItem = client.getWorkItemByID(id);
-
-            if (workItem != null) {
-                TSWAHyperlinkBuilder linkingClient = new TSWAHyperlinkBuilder(collection);
-                return convertWorkItemToIssueData(workItem, linkingClient);
-            }
-        }
-        finally {
-            if (client != null) {
-                client.close();
-            }
+        if (workItem != null) {
+            TSWAHyperlinkBuilder linkingClient = new TSWAHyperlinkBuilder(collection);
+            return convertWorkItemToIssueData(workItem, linkingClient);
         }
 
         return null;

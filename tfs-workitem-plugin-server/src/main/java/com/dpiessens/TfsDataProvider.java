@@ -26,6 +26,10 @@ public interface TfsDataProvider {
     @NotNull
     Collection<IssueData> getIssuesForVersion(@NotNull Integer revision, @NotNull String host, @Nullable Credentials credentials) throws InvalidCredentialsException;
 
+    @NotNull
+    Collection<IssueData> getIssues(@NotNull Collection<Integer> ids, @NotNull String host, @Nullable Credentials credentials)
+            throws InvalidCredentialsException;
+
     /**
      * Gets the data related to a specific work item.
      * @param id The ID of the issue to get.

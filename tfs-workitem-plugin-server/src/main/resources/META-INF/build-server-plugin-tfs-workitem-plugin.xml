@@ -5,6 +5,7 @@
         <constructor-arg index="0" ref="tfsIssueFetcher"/>
         <constructor-arg index="1" ref="tfsDataProvider" />
         <constructor-arg index="2" ref="vcsManager" />
+        <constructor-arg index="3" ref="ehCacheUtil"/>
     </bean>
     <bean id="tfsIssueFetcher" class="com.dpiessens.TfsIssueFetcher">
         <constructor-arg index="0" ref="ehCacheUtil"/>
