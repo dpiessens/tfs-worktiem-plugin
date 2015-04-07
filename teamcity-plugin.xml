@@ -4,7 +4,7 @@
     <name>tfs-workitems</name>
     <display-name>TFS Workitem Plugin</display-name>
     <version>@Version@</version>
-    <description>A plugin to integrate the issue tracker and mark related workitems in TFS</description>
+    <description>A plugin to integrate the issue tracker and mark related work items in TFS</description>
     <download-url>Plugin download URL</download-url>
     <email>dan@danpiessens.com</email>
   </info>

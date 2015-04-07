@@ -1,6 +1,6 @@
 ﻿$ServiceName = "TeamCity"
 $PluginFileName = "tfs-workitems.zip"
-$TeamCityInstallRoot = "D:\TeamCity"
+$TeamCityInstallRoot = "D:\TeamCity\9.0.1"
 
 Write-Host
 Write-Host "Deploying TeamCity Plugin"
