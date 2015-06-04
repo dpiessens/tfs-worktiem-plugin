@@ -7,8 +7,9 @@ import jetbrains.buildServer.issueTracker.IssueFetcher;
 import jetbrains.buildServer.issueTracker.IssueMention;
 import jetbrains.buildServer.util.cache.EhCacheUtil;
 import jetbrains.buildServer.vcs.*;
-import org.apache.commons.httpclient.*;
+import net.sf.ehcache.Cache;
 import org.apache.commons.httpclient.Credentials;
+import org.apache.commons.httpclient.UsernamePasswordCredentials;
 import org.jetbrains.annotations.NotNull;
 import org.jfree.util.Log;
 
@@ -16,8 +17,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
-
-import net.sf.ehcache.Cache;
 
 public class TfsIssueProvider extends AbstractIssueProvider {
 
@@ -67,17 +66,19 @@ public class TfsIssueProvider extends AbstractIssueProvider {
         }
 
         // Filter by getting the VCS Root and figuring out if that is a TFS root
-        final SVcsModification vcsModification = this.vcsManager.findModificationById(modification.getId(), false);
+        final long revisionId = modification.getId();
+        final SVcsModification vcsModification = this.vcsManager.findModificationById(revisionId, false);
         if (vcsModification == null) {
-            Log.warn(String.format("Could not find VCS Modification %d in build system", modification.getId()));
+            Log.warn(String.format("Could not find VCS Modification %d in build system", revisionId));
             return result;
         }
 
         final VcsRootInstance vcsRoot = vcsModification.getVcsRoot();
+        final String vcsName = vcsRoot.getVcsName();
 
-        LOG.debug("Issue Tracker VCS Root Type: " + vcsRoot.getVcsName());
+        LOG.debug("Issue Tracker VCS Root Type: " + vcsName);
 
-        if (!vcsRoot.getVcsName().equalsIgnoreCase("tfs")) {
+        if (!vcsName.equalsIgnoreCase("tfs")) {
             return result;
         }
 
@@ -90,10 +91,6 @@ public class TfsIssueProvider extends AbstractIssueProvider {
             return result;
         }
 
-
-        LOG.debug(String.format("VCS Properties: %s", vcsRoot.getProperties()));
-
-        //TODO: Get host and optionally credentials from VCS root as a priority
         LOG.debug(String.format("Getting issues for revision: %d from host: %s", revision, this.myHost));
 
         try {
@@ -134,7 +131,6 @@ public class TfsIssueProvider extends AbstractIssueProvider {
      * @param vcsRoot The VCS root for the revision
      * @return The appropriate credentials.
      */
-    @NotNull
     private org.apache.commons.httpclient.Credentials checkForVcsCredentials(final VcsRoot vcsRoot) {
 
         // If flag is checked use TFS credentials instead
@@ -143,7 +139,10 @@ public class TfsIssueProvider extends AbstractIssueProvider {
         if (properties.containsKey(USE_CREDS_PROPERTY) && Boolean.parseBoolean(properties.get(USE_CREDS_PROPERTY))) {
             String username = vcsRoot.getProperty("tfs-username");
             String password = vcsRoot.getProperty("secure:tfs-password");
-            return new UsernamePasswordCredentials(username, password);
+
+            if (username != null && password != null) {
+                return new UsernamePasswordCredentials(username, password);
+            }
         }
 
         return myCredentials;
@@ -162,7 +161,7 @@ public class TfsIssueProvider extends AbstractIssueProvider {
         Thread.currentThread().setContextClassLoader(getClass().getClassLoader());
 
         try {
-            net.sf.ehcache.Element element = myCache.get(key);
+            net.sf.ehcache.Element element = myCache != null ? myCache.get(key) : null;
             if (element != null) {
                 Serializable value = element.getValue();
                 if (value == null) {
@@ -176,11 +175,15 @@ public class TfsIssueProvider extends AbstractIssueProvider {
             try {
                 LOG.debug(String.format("Adding revision %s to revision cache", key));
                 Collection<SerializableIssueMention> result = function.fetch();
-                myCache.put(new net.sf.ehcache.Element(key, result));
+                if (myCache != null) {
+                    myCache.put(new net.sf.ehcache.Element(key, result));
+                }
                 return result;
             }
             catch (Exception e) {
-                myCache.put(new net.sf.ehcache.Element(key, null));
+                if (myCache != null) {
+                    myCache.put(new net.sf.ehcache.Element(key, null));
+                }
                 throw e;
             }
         }
@@ -193,7 +196,7 @@ public class TfsIssueProvider extends AbstractIssueProvider {
      * An interface represents an action of actual issue fetching.
      * This action takes place when a suitable issue isn't found in cache, or expired.
      */
-    private static interface FetchFunction {
+    private interface FetchFunction {
         /**
          * Fetches the issue. Throws an exception in case of a problem.
          * @return a non-null issue in case of success

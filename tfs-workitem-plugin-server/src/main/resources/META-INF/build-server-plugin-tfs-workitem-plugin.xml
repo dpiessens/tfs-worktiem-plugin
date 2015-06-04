@@ -12,5 +12,8 @@
         <constructor-arg index="1" ref="tfsDataProvider" />
     </bean>
     <bean id="tfsDataProvider" class="com.dpiessens.TfsJavaDataProvider" />
-    <bean id="tfsUsernameMapperListener" class="com.dpiessens.TfsUsernameMapperListener" init-method="register" />
+    <bean id="tfsUsernameMapperListener" class="com.dpiessens.listeners.TfsUsernameMapperListener"
+          init-method="register"/>
+    <bean id="tfsUsernameMapperConfig" class="com.dpiessens.listeners.UsernameMapperConfigImpl"/>
+    <bean id="tfsUsernameListenerExtension" class="com.dpiessens.listeners.TfsUsernameListenerExtension"/>
 </beans>
